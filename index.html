@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusCare — macOS & iOS Classy Health Operating System</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Sans Devanagari for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Toast Stack -->
+  <div id="macos-toast-stack" style="position: fixed; top: 2rem; right: 2rem; z-index: 200; display: flex; flex-direction: column; gap: 0.5rem; pointer-events: none;"></div>
+
+  <!-- ==========================================================================
+       macOS WINDOW FRAME (The Classy Apple Desktop Shell)
+       ========================================================================== -->
+  <div class="macos-window-frame">
+
+    <!-- ==========================================================================
+         LEFT SIDEBAR (macOS Icon Dock & Traffic Lights)
+         ========================================================================== -->
+    <aside class="macos-sidebar">
+      <div>
+        <!-- Window Traffic Light Dots (Red, Yellow, Green) -->
+        <div class="macos-traffic-lights">
+          <div class="traffic-light traffic-close"></div>
+          <div class="traffic-light traffic-min"></div>
+          <div class="traffic-light traffic-max"></div>
+        </div>
+
+        <!-- Navigation Dock Stack -->
+        <nav class="sidebar-nav-stack">
+          <button class="sidebar-icon-btn active" data-view="anatomy" title="3D Anatomy & Vitals Command">
+            <span>🫀</span>
+          </button>
+          <button class="sidebar-icon-btn" data-view="bms" title="BookMyShow Department Vacancies">
+            <span>🎟️</span>
+          </button>
+          <button class="sidebar-icon-btn" data-view="partner" title="Hospital Partner & Staff Schedule">
+            <span>🏥</span>
+          </button>
+          <button class="sidebar-icon-btn" data-view="wellness" title="Wellness Habits & Hygiene">
+            <span>📚</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Bottom User Avatar Badge -->
+      <div class="sidebar-user-avatar" title="Ramesh Kumar (ABHA: 91-4820)">
+        RK
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN WINDOW VIEWPORT
+         ========================================================================== -->
+    <main class="macos-main-viewport">
+      
+      <!-- Window Top Navigation Bar -->
+      <header class="macos-window-header">
+        <!-- Spotlight Search Bar -->
+        <div class="macos-spotlight-search">
+          <span style="font-size: 0.95rem; opacity: 0.6;">🔍</span>
+          <input type="text" id="macos-spotlight-input" class="spotlight-input" placeholder="Search by Contact, Doctor, Condition... (⌘K)">
+          <span style="font-size: 0.72rem; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-weight: 700;">⌘K</span>
+        </div>
+
+        <!-- Header Right Tools -->
+        <div class="header-right-tools">
+          <div class="macos-pill-chip">
+            <span>📅 Today, 12 Oct</span>
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--ios-teal);"></span>
+          </div>
+
+          <button id="btn-lang-macos" class="macos-pill-chip" title="Switch language">
+            🌐 हिन्दी
+          </button>
+
+          <!-- User Profile Pill -->
+          <div class="user-profile-badge" onclick="alert('Ramesh Kumar\nABHA ID: 91-4820-1928-4011\nPMJAY Cashless Verified\nBlood Group: B+\nLocation: New Delhi')">
+            <div class="user-badge-avatar">RK</div>
+            <div style="font-size: 0.82rem; font-weight: 700;">Ramesh Kumar</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ==========================================================================
+           VIEW 1: 3D HOLOGRAPHIC ANATOMY & CLASSY HEALTH DASHBOARD (Images 1 & 2)
+           ========================================================================== -->
+      <section id="anatomy-view" class="anatomy-stage-view">
+        
+        <!-- LEFT COLUMN: Patient Activity & Vitals Stack -->
+        <div class="left-vitals-stack">
+          <div>
+            <h1 class="patient-greeting-title">
+              Hello, Ramesh. 👋<br>
+              <span style="font-weight: 400; color: var(--text-secondary); font-size: 1.05rem;">Have a good life</span>
+            </h1>
+          </div>
+
+          <!-- Patient Activity Card (Image 1) -->
+          <div class="patient-activity-card">
+            <div class="activity-avatar">👨‍💼</div>
+            <div>
+              <div style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase; font-weight: 700;">Patient Activity</div>
+              <strong style="font-size: 1.05rem; color: var(--text-primary); display: block;">Ramesh Kumar</strong>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">
+                Age: <strong>54</strong> • Condition: <strong>Cardiac Eval</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2x2 Classy Vitals Widgets (Images 1 & 2) -->
+          <div class="vitals-cards-2x2">
+            <!-- Widget 1: Blood Status with Dot Matrix -->
+            <div class="classy-vital-widget">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Blood Status</span>
+                <span class="vital-icon-circle" style="background: var(--ios-red-light); color: var(--ios-red);">🩸</span>
+              </div>
+              <div>
+                <div class="vital-metric-large">118/78</div>
+                <div class="mini-dot-matrix">
+                  <div class="matrix-pixel active"></div><div class="matrix-pixel active"></div><div class="matrix-pixel active"></div><div class="matrix-pixel"></div><div class="matrix-pixel active"></div><div class="matrix-pixel"></div>
+                  <div class="matrix-pixel active"></div><div class="matrix-pixel"></div><div class="matrix-pixel active"></div><div class="matrix-pixel active"></div><div class="matrix-pixel"></div><div class="matrix-pixel active"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget 2: Heart Rate with ECG Rhythm Wave (Image 1) -->
+            <div class="classy-vital-widget">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Heart Rate</span>
+                <span class="vital-icon-circle" style="background: var(--ios-red-light); color: var(--ios-red);">❤️</span>
+              </div>
+              <div>
+                <div class="vital-metric-large" style="color: var(--ios-red);">74 <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary);">BPM</span></div>
+                <!-- Animated SVG ECG Wave -->
+                <svg width="100%" height="24" viewBox="0 0 100 24" style="margin-top: 4px;">
+                  <path d="M 0 12 L 20 12 L 26 4 L 34 22 L 40 10 L 46 14 L 52 12 L 100 12" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Widget 3: Blood Sugar with Mini Equalizer Bars (Image 1) -->
+            <div class="classy-vital-widget">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Blood Sugar</span>
+                <span class="vital-icon-circle" style="background: var(--ios-purple-light); color: var(--ios-purple);">🧬</span>
+              </div>
+              <div>
+                <div class="vital-metric-large">98 <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary);">mg/dL</span></div>
+                <div style="display: flex; gap: 3px; align-items: flex-end; height: 18px; margin-top: 4px;">
+                  <div style="width: 4px; height: 40%; background: var(--ios-purple); border-radius: 2px;"></div>
+                  <div style="width: 4px; height: 75%; background: var(--ios-purple); border-radius: 2px;"></div>
+                  <div style="width: 4px; height: 50%; background: var(--ios-purple); border-radius: 2px;"></div>
+                  <div style="width: 4px; height: 90%; background: var(--ios-purple); border-radius: 2px;"></div>
+                  <div style="width: 4px; height: 60%; background: var(--ios-purple); border-radius: 2px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget 4: Temperature with Cyan Radial Arc (Image 2) -->
+            <div class="classy-vital-widget vital-arc-widget">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--ios-teal); font-weight: 700;">Temperature</span>
+                <span class="vital-icon-circle" style="background: #ffffff; color: var(--ios-teal);">🌡️</span>
+              </div>
+              <div>
+                <div class="vital-metric-large" style="color: #0f766e;">36.6° <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary);">C</span></div>
+                <span style="font-size: 0.72rem; color: #0d9488; font-weight: 600;">● Normal Range</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Full-Width Metric: Oxygen SpO2 (Image 2) -->
+          <div class="patient-activity-card" style="justify-content: space-between;">
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Oxygen Saturation</span>
+              <div style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">98% <span style="font-size: 0.8rem; color: var(--ios-green); font-weight: 700;">SpO2</span></div>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.72rem; background: var(--ios-green-light); color: var(--ios-green); padding: 3px 8px; border-radius: 99px; font-weight: 700;">Optimal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENTER STAGE: 3D Holographic Anatomy Body & Pedestal (Images 1 & 2) -->
+        <div class="center-3d-stage">
+          
+          <!-- Top 3D Camera Controls -->
+          <div class="stage-top-controls">
+            <button id="btn-toggle-angle" class="macos-pill-chip" style="font-weight: 700;">
+              Anterior (Front)
+            </button>
+
+            <!-- Zoom Controls (+ / - from Image 2) -->
+            <div style="display: flex; gap: 4px; background: #ffffff; padding: 2px; border-radius: 99px; border: 1px solid var(--macos-border);">
+              <button id="btn-zoom-out" class="macos-pill-chip" style="padding: 2px 8px; border: none; box-shadow: none;">−</button>
+              <button id="btn-zoom-in" class="macos-pill-chip" style="padding: 2px 8px; border: none; box-shadow: none;">+</button>
+            </div>
+          </div>
+
+          <!-- 3D Hologram Viewport -->
+          <div class="canvas-3d-viewport">
+            
+            <!-- Circular Glowing Pedestal Platform (Image 1) -->
+            <div class="hologram-pedestal"></div>
+            <div class="hologram-pedestal-core"></div>
+
+            <!-- 3D Scanning Ring (Image 2) -->
+            <div class="scanning-ring-hologram"></div>
+
+            <!-- SVG 3D Hologram Body Canvas -->
+            <div id="svg-3d-body-canvas-wrap" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></div>
+
+            <!-- Floating Holographic Pin 1: Shoulder Injury (Image 1) -->
+            <div class="hologram-pin pin-shoulder" data-region="shoulder">
+              <span class="pulse-node-dot"></span>
+              <span>Injured & Pain</span>
+            </div>
+
+            <!-- Floating Holographic Pin 2: Body Temperature (Image 1) -->
+            <div class="hologram-pin pin-core" data-region="core">
+              <span>🌡️</span>
+              <span>Body temp 36.6°C</span>
+            </div>
+
+            <!-- Floating Holographic Pin 3: Chest Cardiac Hotspot -->
+            <div class="hologram-pin pin-chest" data-region="chest">
+              <span>❤️</span>
+              <span>Cardiac 74 BPM</span>
+            </div>
+          </div>
+
+          <!-- Bottom Rotating Organ Cards (Lungs, Brain, Heart from Image 1) -->
+          <div class="bottom-organs-row">
+            <div class="organ-floating-card" data-organ="lungs" title="Inspect Lungs">
+              <div class="organ-card-icon">🫁</div>
+              <div>
+                <strong style="font-size: 0.8rem; display: block;">Lungs</strong>
+                <span style="font-size: 0.7rem; color: var(--ios-green); font-weight: 700;">SpO2 99%</span>
+              </div>
+            </div>
+
+            <div class="organ-floating-card" data-organ="brain" title="Inspect Brain">
+              <div class="organ-card-icon">🧠</div>
+              <div>
+                <strong style="font-size: 0.8rem; display: block;">Brain</strong>
+                <span style="font-size: 0.7rem; color: var(--ios-blue); font-weight: 700;">Active 8/10</span>
+              </div>
+            </div>
+
+            <div class="organ-floating-card" data-organ="heart" title="Inspect Heart">
+              <div class="organ-card-icon">🫀</div>
+              <div>
+                <strong style="font-size: 0.8rem; display: block;">Heart</strong>
+                <span style="font-size: 0.7rem; color: var(--ios-red); font-weight: 700;">Optimal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Consulting Doctors & Emergency Widget (Images 1 & 3) -->
+        <div class="right-booking-stack">
+          
+          <!-- Date Filter Pills (Image 1) -->
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.4rem;">
+            <div class="macos-pill-chip" style="font-size: 0.75rem;">📅 Oct 12 - Oct 18</div>
+            <div class="macos-pill-chip active-black" style="font-size: 0.75rem;">12th Today</div>
+            <div class="macos-pill-chip" style="font-size: 0.75rem;">Weekly →</div>
+          </div>
+
+          <!-- Consulting Doctors Deck Header -->
+          <div class="doctors-deck-header">
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary);">Consulting Doctor</h3>
+            <span style="font-size: 0.78rem; color: var(--ios-blue); font-weight: 600; cursor: pointer;" onclick="switchMacView('bms')">See All</span>
+          </div>
+
+          <!-- Doctor 1: Dr. Priya Nair (Cardiologist) -->
+          <div class="doctor-item-card">
+            <div class="doc-info-col">
+              <div class="doc-avatar-img">👩‍⚕️</div>
+              <div>
+                <div class="doc-text-name">Dr. Priya Nair</div>
+                <div class="doc-text-spec">Cardiac Surgeon • AIIMS</div>
+              </div>
+            </div>
+            <button class="btn-book-black" data-doc="Dr. Priya Nair">Book Now</button>
+          </div>
+
+          <!-- Doctor 2: Dr. Sandeep Goel (Orthopedic) -->
+          <div class="doctor-item-card">
+            <div class="doc-info-col">
+              <div class="doc-avatar-img">👨‍⚕️</div>
+              <div>
+                <div class="doc-text-name">Dr. Sandeep Goel</div>
+                <div class="doc-text-spec">Orthopedic Specialist</div>
+              </div>
+            </div>
+            <button class="btn-book-black" data-doc="Dr. Sandeep Goel">Book Now</button>
+          </div>
+
+          <!-- Doctor 3: Dr. Anita Joshi (Pediatric) -->
+          <div class="doctor-item-card">
+            <div class="doc-info-col">
+              <div class="doc-avatar-img">👩‍⚕️</div>
+              <div>
+                <div class="doc-text-name">Dr. Anita Joshi</div>
+                <div class="doc-text-spec">Pediatric Specialist</div>
+              </div>
+            </div>
+            <button class="btn-book-black" data-doc="Dr. Anita Joshi">Book Now</button>
+          </div>
+
+          <!-- Doctor 4: Dr. Rajesh Sharma (Neurology) -->
+          <div class="doctor-item-card">
+            <div class="doc-info-col">
+              <div class="doc-avatar-img">👨‍⚕️</div>
+              <div>
+                <div class="doc-text-name">Dr. Rajesh Sharma</div>
+                <div class="doc-text-spec">Chief Neurologist</div>
+              </div>
+            </div>
+            <button class="btn-book-black" data-doc="Dr. Rajesh Sharma">Book Now</button>
+          </div>
+
+          <!-- Emergency Services Blue Widget (Image 1 Bottom Right) -->
+          <div class="emergency-widget-blue">
+            <div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; opacity: 0.85;">Priority Trauma</div>
+              <h4 style="font-size: 1.4rem; font-weight: 800; line-height: 1.2; margin-top: 4px;">Emergency Services</h4>
+            </div>
+            <a href="tel:108" class="btn-get-help-pill" onclick="dispatchEmergencyServices()">
+              <span>Get Help Now (108)</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           VIEW 2: BookMyShow Cinema Style Seat Booking
+           ========================================================================== -->
+      <section id="bms-view" class="bms-view-container hidden">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800;">Department Vacancies & Seat Matrix</h2>
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+              Book your consultation seat just like a movie ticket to eliminate hospital waiting!
+            </span>
+          </div>
+          <button class="macos-pill-chip" onclick="switchMacView('anatomy')">← Return to 3D Anatomy</button>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--macos-border); border-radius: var(--radius-card); padding: 2rem; box-shadow: var(--card-shadow);">
+          <!-- Screen Curve -->
+          <div class="bms-screen-curve"></div>
+          <div id="bms-screen-doctor-name" style="text-align: center; font-size: 0.85rem; font-weight: 800; color: var(--ios-blue); text-transform: uppercase;">
+            CONSULTATION DESK: DR. PRIYA NAIR • ROOM 204
+          </div>
+
+          <!-- Rows Container -->
+          <div id="bms-seat-rows-container" class="seat-row-stack"></div>
+
+          <!-- Checkout Action -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--macos-border); padding-top: 1.5rem; margin-top: 1.5rem;">
+            <div>
+              <div id="bms-selected-seat-label" style="font-size: 1.1rem; font-weight: 800;">No Seat Selected Yet</div>
+              <span style="font-size: 0.8rem; color: var(--text-secondary);">Fee: ₹0 under Ayushman PMJAY Cashless</span>
+            </div>
+            <button id="btn-confirm-bms-booking" class="btn-book-black" style="padding: 0.75rem 1.75rem; font-size: 0.9rem;">
+              🎟️ Confirm Seat Booking
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           VIEW 3: Hospital Partner & Staff Duty Scheduler
+           ========================================================================== -->
+      <section id="partner-view" class="bms-view-container hidden">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800;">Hospital Partner Portal & Staff Roster</h2>
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+              Footfall analytics & shift breaks dynamically scheduled during arrival dips.
+            </span>
+          </div>
+          <button class="macos-pill-chip" onclick="switchMacView('anatomy')">← Return to 3D Anatomy</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div class="classy-vital-widget">
+            <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Patient Footfall Today</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary);">1,420 Patients</div>
+            <span style="font-size: 0.75rem; color: var(--ios-teal); font-weight: 700;">● Arrival Tracking Active</span>
+          </div>
+          <div class="classy-vital-widget">
+            <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Peak Window</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--ios-orange);">10:00 - 12:30 PM</div>
+            <span style="font-size: 0.75rem; color: var(--text-tertiary);">Shift breaks moved after 12:30 PM</span>
+          </div>
+          <div class="classy-vital-widget">
+            <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Minor Cases Deflected to AI</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--ios-blue);">38% (540 Visits)</div>
+            <span style="font-size: 0.75rem; color: var(--ios-blue); font-weight: 700;">Hospital congestion averted</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           VIEW 4: Wellness Habits & Hygiene Articles
+           ========================================================================== -->
+      <section id="wellness-view" class="bms-view-container hidden">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800;">Family Wellness & Daily Hygiene Habits</h2>
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+              Preventive healthcare guidance for kids and seniors.
+            </span>
+          </div>
+          <button class="macos-pill-chip" onclick="switchMacView('anatomy')">← Return to 3D Anatomy</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div class="classy-vital-widget" onclick="alert('Monsoon Dengue Prevention: Ensure clean water storage and mosquito protection.')">
+            <span style="font-size: 1.8rem;">🦟</span>
+            <strong style="font-size: 1rem; margin-top: 0.5rem;">Monsoon & Dengue Prevention</strong>
+            <span style="font-size: 0.75rem; color: var(--text-tertiary);">3 min read • Pediatric Care</span>
+          </div>
+          <div class="classy-vital-widget" onclick="alert('Senior Mobility: Seated knee extensions and warm hydration protect joint cartilage.')">
+            <span style="font-size: 1.8rem;">🧘</span>
+            <strong style="font-size: 1rem; margin-top: 0.5rem;">Senior Knee Cartilage Care</strong>
+            <span style="font-size: 0.75rem; color: var(--text-tertiary);">4 min read • Orthopedics</span>
+          </div>
+          <div class="classy-vital-widget" onclick="alert('WHO Hand Hygiene: The 6-step song technique for growing kids.')">
+            <span style="font-size: 1.8rem;">🧼</span>
+            <strong style="font-size: 1rem; margin-top: 0.5rem;">WHO 6-Step Handwash Routine</strong>
+            <span style="font-size: 0.75rem; color: var(--text-tertiary);">2 min read • Child Health</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==========================================================================
+       FLOATING iOS HEALTH ASSISTANT (Chatbot Window & On-Call Doctor)
+       ========================================================================== -->
+  <div class="floating-ai-capsule">
+    <button id="floating-ai-btn" class="ai-floating-btn" title="Ask NexusCare AI">
+      💬
+    </button>
+  </div>
+
+  <div id="ios-chat-window-box" class="ios-chat-window hidden">
+    <div class="ios-chat-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 1.3rem;">🩺</span>
+        <div>
+          <strong style="font-size: 0.88rem; display: block;">NexusCare AI Clinical Desk</strong>
+          <span style="font-size: 0.72rem; color: var(--ios-green); font-weight: 700;">● Online • On-Call Doctor Ready</span>
+        </div>
+      </div>
+      <button id="btn-close-ios-chat" style="background: none; border: none; font-size: 1.1rem; cursor: pointer;">✕</button>
+    </div>
+
+    <div id="ios-chat-messages-scroll" class="ios-chat-body">
+      <div class="ios-bubble ai">
+        Hello Ramesh! I can evaluate minor ailments (acidity, mild cold) with validated home remedies, arrange an on-call tele-consult with Dr. Priya, or book an appointment slot.
+      </div>
+    </div>
+
+    <div class="ios-chat-input-bar">
+      <input type="text" id="ios-chat-input" class="ios-input-field" placeholder="Describe symptoms or request on-call doctor...">
+      <button id="btn-send-ios-chat" class="btn-book-black" style="padding: 0.45rem 1rem;">Send</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
